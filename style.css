@@ -1,0 +1,20 @@
+:root { --bg:#0b0c12; --surface:#151824; --surface2:#1c2030; --text:#f4f6fb; --muted:#9aa3b5; --brand:#7c5cff; --line:#2a3040; }
+* { box-sizing:border-box } body { margin:0; font-family:Inter,system-ui,sans-serif; background:var(--bg); color:var(--text); }
+#app { max-width:680px; margin:auto; min-height:100vh; padding:20px 16px 90px; }
+header { display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; }
+header h1 { margin:3px 0; font-size:24px } small,.hint { color:var(--muted); display:block }
+button { border:1px solid var(--line); background:var(--surface2); color:var(--text); padding:12px 14px; border-radius:14px; font-weight:700; }
+button.primary { background:var(--brand); border-color:var(--brand); width:100%; margin-top:10px } button:disabled { opacity:.45 }
+.icon { font-size:18px; padding:10px }
+.card { background:linear-gradient(145deg,var(--surface),#10131d); border:1px solid var(--line); border-radius:20px; padding:18px; margin-bottom:14px; }
+.hero { background:linear-gradient(145deg,#1e1b45,#111523 65%); }
+.balance { font-size:36px; font-weight:900; margin:8px 0 10px; }
+.actions,.quick { display:flex; gap:10px; margin-top:16px; flex-wrap:wrap }.actions button,.quick button { flex:1; min-width:130px }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }.grid .card { margin:0 }.stat b { display:block; font-size:22px; margin-top:8px }
+h2 { font-size:21px; margin:22px 0 12px }.page { display:none }.page.active { display:block }.center{text-align:center}.big{font-size:28px;font-weight:900;margin:10px 0}
+.task{display:flex;justify-content:space-between;align-items:center;gap:10px}.task small{margin-top:5px}.nft{text-align:center}.nftart{height:220px;border-radius:16px;display:grid;place-items:center;background:radial-gradient(circle,#7c5cff,#171a29 70%);font-size:32px;font-weight:900;letter-spacing:4px}
+input{width:100%;background:#0d1018;border:1px solid var(--line);padding:14px;border-radius:14px;color:white;margin:10px 0}code{word-break:break-all;color:#c9c3ff}
+.activity{padding:14px;margin-bottom:10px;border-radius:14px;background:var(--surface);border:1px solid var(--line)}.activity small{margin-top:4px}
+nav{position:fixed;bottom:0;left:0;right:0;margin:auto;max-width:680px;background:rgba(15,17,25,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 4px env(safe-area-inset-bottom)}
+nav button{background:transparent;border:0;padding:7px 5px;font-size:17px;display:flex;flex-direction:column;align-items:center;gap:2px}nav span{font-size:10px;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--line);margin:16px 0}

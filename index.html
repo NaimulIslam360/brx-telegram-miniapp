@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
+  <link rel="stylesheet" href="style.css" />
+  <title>BRX Ecosystem</title>
+</head>
+<body>
+<div id="app">
+  <header>
+    <div><small>BRX ECOSYSTEM</small><h1 id="welcome">Welcome</h1></div>
+    <button class="icon" onclick="showPage('profile')">👤</button>
+  </header>
+
+  <main id="home" class="page active">
+    <section class="hero card">
+      <small>ECOSYSTEM REWARD BALANCE</small>
+      <div class="balance"><span id="brxBalance">0</span> BRX</div>
+      <small>App rewards are separate from on-chain wallet balance.</small>
+      <div class="actions">
+        <button onclick="showPage('wallet')">👛 Wallet</button>
+        <button onclick="showPage('token')">📊 Token</button>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card stat"><span>⭐ Points</span><b id="points">0</b></div>
+      <div class="card stat"><span>🔥 Streak</span><b id="streak">0 days</b></div>
+      <div class="card stat"><span>👥 Referrals</span><b id="refs">0</b></div>
+      <div class="card stat"><span>🖼 NFT</span><b id="nft">None</b></div>
+    </section>
+
+    <h2>Quick Actions</h2>
+    <div class="quick">
+      <button onclick="showPage('rewards')">🎁 Rewards</button>
+      <button onclick="showPage('nftpage')">🖼 Genesis NFT</button>
+      <button onclick="showPage('referral')">👥 Invite</button>
+      <button onclick="showPage('activity')">📜 Activity</button>
+    </div>
+  </main>
+
+  <main id="rewards" class="page">
+    <h2>🎁 Rewards Center</h2>
+    <section class="card center">
+      <small>YOUR POINTS</small><div class="big" id="rewardPoints">0</div>
+      <p>Complete tasks and build your BRX participation.</p>
+    </section>
+    <section class="card task">
+      <div><b>📅 Daily Check-in</b><small>+10 points • Day 7 bonus</small></div>
+      <button id="claimBtn" onclick="claimDaily()">CLAIM</button>
+    </section>
+  </main>
+
+  <main id="wallet" class="page">
+    <h2>👛 Wallet</h2>
+    <section class="card">
+      <p id="walletText">No wallet connected.</p>
+      <input id="walletInput" placeholder="0x... public wallet address" />
+      <button class="primary" onclick="linkWallet()">LINK ADDRESS</button>
+      <p class="hint">Never enter a private key or seed phrase.</p>
+    </section>
+  </main>
+
+  <main id="nftpage" class="page">
+    <h2>🖼 BRX Genesis NFT</h2>
+    <section class="card nft">
+      <div class="nftart">BRX<br>GENESIS</div>
+      <h3>No Genesis NFT linked</h3>
+      <p>Future version: verified on-chain NFT ownership, benefits and eligibility.</p>
+      <button disabled>EXPLORE COMING SOON</button>
+    </section>
+  </main>
+
+  <main id="referral" class="page">
+    <h2>👥 Invite & Earn</h2>
+    <section class="card center">
+      <small>YOUR REFERRAL CODE</small>
+      <div class="big" id="refCode">...</div>
+      <button onclick="copyRef()">COPY CODE</button>
+      <button class="primary" onclick="shareRef()">SHARE INVITE</button>
+    </section>
+    <section class="card">
+      <p>Total invited: <b id="refTotal">0</b></p>
+      <p>Active users: <b id="refActive">0</b></p>
+      <p class="hint">Production rule: reward only verified, genuinely active users.</p>
+    </section>
+  </main>
+
+  <main id="token" class="page">
+    <h2>📊 BRX Token</h2>
+    <section class="card">
+      <h1>🪙 BRX</h1>
+      <p id="tokenName">Loading...</p>
+      <hr>
+      <p>Total Supply <b id="supply"></b></p>
+      <p>Chain <b id="chain"></b></p>
+      <p>Contract <code id="contract"></code></p>
+    </section>
+  </main>
+
+  <main id="activity" class="page">
+    <h2>📜 Activity</h2>
+    <div id="activityList"></div>
+  </main>
+
+  <main id="profile" class="page">
+    <h2>👤 Profile</h2>
+    <section class="card">
+      <h3 id="profileName">BRX User</h3>
+      <p id="profileUsername"></p>
+      <p>BRX ID: <span id="profileId"></span></p>
+      <button onclick="showPage('activity')">VIEW ACTIVITY</button>
+    </section>
+  </main>
+
+  <nav>
+    <button onclick="showPage('home')">🏠<span>Home</span></button>
+    <button onclick="showPage('rewards')">🎁<span>Rewards</span></button>
+    <button onclick="showPage('nftpage')">🖼<span>NFT</span></button>
+    <button onclick="showPage('referral')">👥<span>Invite</span></button>
+    <button onclick="showPage('profile')">👤<span>Profile</span></button>
+  </nav>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
